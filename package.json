@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "node": "nodemon ./src/bin/www",
+    "dev": "nodemon ./src/bin/www",
     "scss": "node-sass -w ./src/scss -o ./public/stylesheets",
-    "dev" : "concurrently \"npm run scss\" \"npm run node\" "
+    "start" : "concurrently \"npm run scss\" \"npm run dev\" "
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
