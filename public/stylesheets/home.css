@@ -1,0 +1,67 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.banner {
+  display: none; }
+  .banner .carousel-item {
+    height: 40vh;
+    width: 100%;
+    background-size: 100%; }
+
+section.productos article {
+  background-color: #ffff;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+  position: relative;
+  height: 70vh; }
+  body.dark section.productos article {
+    background-color: var(--grisOscuro); }
+  section.productos article img {
+    width: 100%; }
+  section.productos article .contenedor {
+    background-color: blue; }
+  section.productos article .a {
+    text-transform: uppercase; }
+
+section.productos h4 {
+  margin: 10px 0; }
+
+section.productos h3 {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #70a6bb;
+  margin-top: 30px;
+  margin-bottom: 10px; }
+  body.dark section.productos h3 {
+    background-color: var(--grisOscuro);
+    color: silver; }
+
+section.tutoriales {
+  margin-top: 30px; }
+  section.tutoriales article {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #70a6bb;
+    border-bottom: none; }
+    body.dark section.tutoriales article {
+      background-color: var(--grisOscuro);
+      color: silver; }
+  section.tutoriales article:last-child {
+    border-bottom: 1px solid #70a6bb; }
+  section.tutoriales p {
+    margin-left: 10px; }
+  section.tutoriales img {
+    width: 100%; }
+
+@media (min-width: 768px) {
+  .home .banner {
+    display: block; }
+  .home section.productos article {
+    height: 60vh; } }
+
+@media (min-width: 1024px) {
+  .banner .carousel-item {
+    height: 53vh; }
+  section.productos article {
+    height: 50vh; } }

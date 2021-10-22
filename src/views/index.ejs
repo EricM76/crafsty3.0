@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body class="home">
+  <%- include('./partials/header')  %> 
+
+    <main class="container">
+        <section class="banner">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <% for( let index = 1; index < banner.length; index++ ) { %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %> " aria-label="Slide 2"></button>
+                    <% } %>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" id="carousel1" style="background-image: url('/images/banner/<%=banner[0]%>');"></div>
+                    <% for( let index = 1; index < banner.length; index++ ) { %>
+                        <div class="carousel-item" id="carousel1" style="background-image: url('/images/banner/<%=banner[index]%>');"></div>
+                    <% } %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+        <div class="row">
+            <section class="productos col-12 col-lg-9 ">
+                <h3 class="">Últimas novedades</h3>
+
+                <div class="celulares row py-2 gx-3">
+                    <% nuevos.forEach(producto => { %>
+                    <div class="col-12 col-md-4 my-2">
+                        <a href="/products/detail/<%= producto.id %>">
+                        <article class="p-3">
+                            <img src="/images/<%= producto.images[0] ? producto.images[0].file  : null %>"  class="img-fluid" alt="" />
+                            <h4 class="text-secondary text-center"><%= producto.name %> </h4>
+                        </article>
+                    </a>
+                    </div>
+                  <% }) %>
+                
+            </div>
+            </section>
+            <aside class="col-12 col-lg-3">
+                <section class="tutoriales">
+                    <div class="row">
+                        <% tutoriales.forEach(tutorial => { %>
+                            <div class="col-12 col-md-6 col-lg-12">
+                                <article>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <img src="/images/<%= tutorial.image %> " alt="" />
+                                        </div>
+                                        <div class="col-7">
+                                            <p><%= tutorial.name %> </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                           
+                          <% }) %>
+                    </div>
+                   
+                   
+                </section>
+                <section class="publicidad">
+                    <article class="row">
+                        <div class="col-12 col-md-6 col-lg-12 my-3">
+                        <img class="img-fluid" src="/images/ad-01.jpg" alt="" />
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12 my-3">
+                        <img class="img-fluid" src="/images/ad-02.jpg" alt="" />
+                        </div>
+                    </article>
+                </section>
+            </aside>
+          
+        </div>
+        <div>
+            <section class="productos">
+                <h3 class="mb-4">Refaccionados con garantía</h3>
+                <div class=" glider-contain">
+
+                    <div class="glider">
+                        <% refact.forEach(producto => { %>
+                              <a href="/products/detail/<%= producto.id %>">
+                                  <article class="card p-3 mx-2">
+                                      <img src="/images/<%= producto.images[0] ? producto.images[0].file  : null %>"  class="img-fluid" alt="" />
+                                      <h4 class="text-secondary text-center"><%= producto.name %> </h4>
+                                  </article>
+                              </a>
+                      <% }) %>
+                    </div>
+                    <button aria-label="Previous" class="glider-prev">«</button>
+                    <button aria-label="Next" class="glider-next">»</button>
+                    <div role="tablist" class="dots"></div>
+                  </div>
+            </section>
+           
+<section class="productos">
+    <h3 class="mb-4">Usados seleccionados</h3>
+    <div class="glider-contain">
+        <div class="glider2">
+            <% usados.forEach(producto => { %>
+                  <a href="/products/detail/<%= producto.id %>">
+                      <article class="card p-3 mx-2">
+                          <img src="/images/<%= producto.images[0] ? producto.images[0].file  : null %>"  class="img-fluid" alt="" />
+                          <h4 class="text-secondary text-center"><%= producto.name %> </h4>
+                      </article>
+                  </a>
+          <% }) %>
+        </div>
+        <button aria-label="Previous" class="glider-prev2">«</button>
+        <button aria-label="Next" class="glider-next2">»</button>
+        <div role="tablist" class="dots"></div>
+      </div>
+</section>
+
+          
+        </div>
+    </main>
+
+    <%- include('./partials/scripts')  %> 
+    <script src="/javascripts/index.js"></script>
+</body>
+
+</html>

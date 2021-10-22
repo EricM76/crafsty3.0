@@ -1,0 +1,16 @@
+    .table{
+        color: var(--grisOscuro);
+        body.dark & {
+            color : silver
+        }
+    }
+    .admin header{
+        background-color : whitesmoke;
+        a{
+            color : white;
+        }
+        a:hover {
+            color : silver
+        }
+        
+    }

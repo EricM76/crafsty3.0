@@ -1,0 +1,37 @@
+:root{
+    --grisOscuro : #222222;
+
+}
+$negro : #111111;
+$blanco : #fefefe;
+$grisClaro : #c8c8c8;
+$grisClaroHover : #acababab;
+$azul : #3e60e9;
+$azulHover : #254be6;
+
+$sombraDark : 10px 10px 20px rgba(170, 170, 170, .16);
+$sombraLight : 10px 10px 20px rgba(0, 0, 0, .16);
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+body{
+    background-image: url('/images/bg-2.png');
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-attachment: fixed;
+    transition: ease all 0.5s;
+
+    &.dark {
+        background-image: url('/images/bg-dark.jpg');
+    }
+    
+}

@@ -1,0 +1,6 @@
+.card {
+    body.dark & {
+        background-color: var(--grisOscuro);
+        color : silver
+    }
+}
