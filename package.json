@@ -5,11 +5,10 @@
   "scripts": {
     "start": "node ./src/bin/www",
     "scss": "node-sass -w ./src/scss -o ./public/stylesheets",
-    "dev" : "concurrently \"npm run scss\" \"nodemon ./src/bin/www\" "
+    "dev": "concurrently \"npm run scss\" \"nodemon ./src/bin/www\" "
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrently": "^6.3.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
@@ -23,7 +22,12 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
     "mysql2": "^2.3.0",
-    "node-sass": "^6.0.1",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.14",
+    "sequelize-cli": "^6.2.0"
   }
 }
